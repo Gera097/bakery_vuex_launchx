@@ -6,7 +6,6 @@
     <CombinarSabores/>
     <CombinarAdornos/>
     <DatosPedido/>
-
 </template>
 
 <script> 
@@ -35,6 +34,9 @@
 
 <style scoped>
     * {
-        background-color: aquamarine;
+        background-color: #FCFBC7;
+        border-style:solid;
+        border-width: 0.2rem;
+        border-color: #9D5977;
     }
 </style>

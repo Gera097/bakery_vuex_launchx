@@ -10,7 +10,9 @@
             <br>
             <h3>Mi pastel: </h3>
             <p>Descripción general del pastel</p>
-            <p>Selección de sabores y adornos</p>
+            <p>Sabores elegidos: {{$store.state.saborElegido.sabores}}</p>
+            <p>Adornos elegidos: {{$store.state.adornoElegido.adornos}}</p>
+            <button id="realizar-pedido">Realizar Pedido</button>
         </div>
 </template>
 
