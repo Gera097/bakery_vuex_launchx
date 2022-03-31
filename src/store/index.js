@@ -44,7 +44,11 @@ export default createStore({
 
     agregar_pedido(state, info_pedido){
       state.infoPedido.push(info_pedido)
+    },
+    eliminar_pedido(state, index){
+      state.infoPedido.splice(index, 1)
     }
+
 
   },
   
