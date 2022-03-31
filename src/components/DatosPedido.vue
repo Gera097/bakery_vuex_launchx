@@ -8,10 +8,9 @@
             <br>
             <label>Correo Electrónico :<input type="email" v-model="cambiar_email_cliente"></label>
             <br>
-            <!-- <p>Nombre: {{$store.state.infoCliente.nombre}}</p>
-            <p>celular: {{$store.state.infoCliente.tel}}</p>
-            <p>correo electrónico: {{$store.state.infoCliente.email}}</p> -->
             <h3>Mi pastel: </h3>
+            <CombinarSabores/>
+            <CombinarAdornos/>
             <p>Descripción general del pastel</p>
             <p>Sabores elegidos: {{$store.state.saborElegido.sabores}}</p>
             <p>Adornos elegidos: {{$store.state.adornoElegido.adornos}}</p>
@@ -20,8 +19,15 @@
 </template>
 
 <script>
+
+    import CombinarSabores from "../components/CombinarSabores.vue";
+    import CombinarAdornos from '@/components/CombinarAdornos.vue';
     export default {
         name: 'DatosPedido',
+        components: {
+            CombinarSabores,
+            CombinarAdornos
+        },
         computed: {
             cambiar_nombre_cliente: {
                 get(){

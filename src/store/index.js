@@ -19,12 +19,11 @@ export default createStore({
       nombre:'',
       tel: '',
       email: ''
-    }
+    },
+    infoPedido: [
+    ]
   },
   getters: {
-   /*  nombre_cliente(state) {
-      return state.infoCliente.nombre.charAt(0).toUpperCase() + state.infoCliente.nombre.slice(1); 
-    }*/
   },
   mutations: {
     sabores_elegidos(state, sabores) {
@@ -41,6 +40,10 @@ export default createStore({
     },
     cambiar_emailCliente(state, email){
       state.infoCliente.email = email;
+    },
+
+    agregar_pedido(state, info_pedido){
+      state.infoPedido.push(info_pedido)
     }
 
   },

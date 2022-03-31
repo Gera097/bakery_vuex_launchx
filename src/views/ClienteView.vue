@@ -1,10 +1,8 @@
 <template>
-    <img src="../assets/LogoPastelería.png" alt="ElDelicioso logo">
+    <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
     <InfoPasteleria/>
     <Sabores/>
     <Adornos/>
-    <CombinarSabores/>
-    <CombinarAdornos/>
     <DatosPedido/>
 </template>
 
@@ -12,8 +10,6 @@
     import InfoPasteleria from "../components/InfoPasteleria.vue"; 
     import Sabores from "../components/Sabores.vue"
     import Adornos from "@/components/Adornos.vue"
-    import CombinarSabores from "../components/CombinarSabores.vue"
-    import CombinarAdornos from '@/components/CombinarAdornos.vue'
     import DatosPedido from "@/components/DatosPedido.vue";
 
 
@@ -21,14 +17,12 @@
         name: 'ClienteView',
 
         components:{
-    InfoPasteleria,
-    Sabores,
-    Adornos,
-    CombinarSabores,
-    CombinarAdornos,
-    DatosPedido
+            InfoPasteleria,
+            Sabores,
+            Adornos,
+            DatosPedido
    
-}
+        }
     }
 </script>
 
