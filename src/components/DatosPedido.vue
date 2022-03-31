@@ -1,5 +1,6 @@
 <template>
         <div>
+            <form v-on:submit.prevent="agregarEntrada">
             <h2>Mi Pedido</h2>
             <h3>Mis Datos: </h3>
             <label>Nombre: <input type="text" v-model="cambiar_nombre_cliente"></label>
@@ -15,6 +16,7 @@
             <p>Sabores elegidos: {{$store.state.saborElegido.sabores}}</p>
             <p>Adornos elegidos: {{$store.state.adornoElegido.adornos}}</p>
             <button id="realizar-pedido">Realizar Pedido</button>
+            </form>
         </div>
 </template>
 
@@ -22,6 +24,9 @@
 
     import CombinarSabores from "../components/CombinarSabores.vue";
     import CombinarAdornos from '@/components/CombinarAdornos.vue';
+
+    let idEntrada = 1;
+
     export default {
         name: 'DatosPedido',
         components: {
@@ -52,6 +57,15 @@
                 set(email) {
                     this.$store.commit('cambiar_emailCliente', email)
                 }
+            },
+            agregarEntrada() {
+                const datos_pedido = {
+                    id: idEntrada++,
+                    nombre: this.$store.state.infoCliente.nombre,
+                    tel: this.$store.state.infoCliente.tel,
+                    email: this.$store.state.infoCliente.email,
+                }
+                this.$store.commit('agregar_pedido', datos_pedido)   
             }
          }
     }

@@ -21,6 +21,11 @@ export default createStore({
       email: ''
     },
     infoPedido: [
+      {
+        nombre:'',
+        tel: '',
+        email: ''
+      }
     ]
   },
   getters: {

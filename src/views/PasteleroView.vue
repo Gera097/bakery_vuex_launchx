@@ -1,9 +1,9 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
     
-    <form v-on:submit.prevent="agregarEntrada">  
+    <!-- <form v-on:submit.prevent="agregarEntrada">  
         <button>Add</button>
-    </form>
+    </form> -->
     <ul>
         <EntradaPedido
         v-for="(entrada, index) in store.state.infoPedido"
