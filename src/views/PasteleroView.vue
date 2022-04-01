@@ -1,6 +1,9 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
-    
+
+    <Inventario objeto='cantidadSabores' caption="Sabores"/>
+    <Inventario objeto='cantidadAdornos' caption="Adornos"/>
+
     <table>
         <caption>Pedidos</caption>
         <tr>
@@ -10,7 +13,6 @@
             <th>Sabores</th>
             <th>Adornos</th>
         </tr>
-        
         <EntradaPedido
         v-for="(entrada, index) in store.state.infoPedido"
         :key="entrada.id"
@@ -32,20 +34,9 @@
 <script setup> 
     import { useStore } from 'vuex'
     import EntradaPedido from "@/components/EntradaPedido.vue";
+    import Inventario from '@/components/Inventario.vue';
 
     const store = useStore()
-    /* let idEntrada = 1;
-
-    function agregarEntrada() {
-        const datos_pedido = {
-            id: idEntrada++,
-            nombre: store.state.infoCliente.nombre,
-            tel: store.state.infoCliente.tel,
-            email: store.state.infoCliente.email
-        }
-
-        store.commit('agregar_pedido', datos_pedido)
-    } */
 </script>
 
 <style scoped>

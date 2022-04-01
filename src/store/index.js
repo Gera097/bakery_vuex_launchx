@@ -9,6 +9,14 @@ export default createStore({
       limon: 10,
       naranja: 10,
     },
+    cantidadAdornos: {
+      Fondant: 10,
+      Chocolate: 15,
+      Nueces: 20,
+      Fresas: 40,
+      Frutas: 10,
+      Chantilli: 12
+    },
     saborElegido: {
       sabores: ['chocolate']
     },
