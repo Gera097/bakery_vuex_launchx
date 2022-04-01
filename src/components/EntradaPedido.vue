@@ -1,12 +1,16 @@
 <template>
-    <li>
-        {{nombre}} | {{tel}} | {{email}}
-        <button @click="$emit('remove')">Eliminar</button>
-    </li>
+    <tr>
+        <td>{{nombre}}</td>
+        <td>{{tel}}</td>
+        <td>{{email}}</td>
+        <td>{{sabores}}</td>
+        <td>{{adornos}}</td>
+        <td><button @click="$emit('remove')">Eliminar</button></td>
+    </tr>
 </template>
 
 <script setup>
-    defineProps(['nombre', 'tel', 'email'])
+    defineProps(['nombre', 'tel', 'email','sabores','adornos'])
     defineEmits(['remove'])
 </script>
 

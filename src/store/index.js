@@ -10,10 +10,10 @@ export default createStore({
       naranja: 10,
     },
     saborElegido: {
-      sabores: []
+      sabores: ['chocolate']
     },
     adornoElegido: {
-      adornos: []
+      adornos: ['fresas']
     },
     infoCliente: {
       nombre:'',
@@ -22,13 +22,17 @@ export default createStore({
     },
     infoPedido: [
       {
-        nombre:'',
-        tel: '',
-        email: ''
+        
       }
     ]
   },
   getters: {
+    sabores_pastel(state){
+      return state.saborElegido.sabores.toString().replaceAll(',', ', ');
+    },
+    adornos_pastel(state){
+      return state.adornoElegido.adornos.toString().replaceAll(',', ', ');
+    }
   },
   mutations: {
     sabores_elegidos(state, sabores) {
@@ -52,8 +56,14 @@ export default createStore({
     },
     eliminar_pedido(state, index){
       state.infoPedido.splice(index, 1)
+    },
+    limpiar_formulario(state){
+      state.saborElegido.sabores = [];
+      state.adornoElegido.adornos = [];
+      for (let dato in state.infoCliente) {
+        state.infoCliente[dato] = '';
+      }
     }
-
 
   },
   

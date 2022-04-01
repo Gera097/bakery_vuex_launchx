@@ -3,11 +3,11 @@
             <form v-on:submit.prevent="agregarEntrada">
             <h2>Mi Pedido</h2>
             <h3>Mis Datos: </h3>
-            <label>Nombre: <input type="text" v-model="cambiar_nombre_cliente"></label>
+            <label>Nombre: <input type="text" v-model="cambiar_nombre_cliente" required></label>
             <br>
-            <label>Teléfono: <input type="tel" v-model="cambiar_tel_cliente"></label>
+            <label>Teléfono: <input type="tel" v-model="cambiar_tel_cliente" required></label>
             <br>
-            <label>Correo Electrónico :<input type="email" v-model="cambiar_email_cliente"></label>
+            <label>Correo Electrónico :<input type="email" v-model="cambiar_email_cliente" required></label>
             <br>
             <h3>Mi pastel: </h3>
             <CombinarSabores/>
@@ -64,8 +64,12 @@
                     nombre: this.$store.state.infoCliente.nombre,
                     tel: this.$store.state.infoCliente.tel,
                     email: this.$store.state.infoCliente.email,
+                    sabores: this.$store.getters.sabores_pastel,
+                    adornos: this.$store.getters.adornos_pastel
                 }
-                this.$store.commit('agregar_pedido', datos_pedido)   
+                this.$store.commit('agregar_pedido', datos_pedido); 
+                alert("Pedido realizado correctamente"); 
+                this.$store.commit('limpiar_formulario')
             }
          }
     }
