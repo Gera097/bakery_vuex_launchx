@@ -10,12 +10,13 @@ export default createStore({
       naranja: 10,
     },
     cantidadAdornos: {
-      Fondant: 10,
-      Chocolate: 15,
-      Nueces: 20,
-      Fresas: 40,
-      Frutas: 10,
-      Chantilli: 12
+      fondant: 10,
+      chocolate: 15,
+      nueces: 20,
+      fresas: 40,
+      frutas: 10,
+      chantilli: 12,
+      
     },
     saborElegido: {
       sabores: ['chocolate']
@@ -29,9 +30,6 @@ export default createStore({
       email: ''
     },
     infoPedido: [
-      {
-        
-      }
     ]
   },
   getters: {
@@ -71,6 +69,13 @@ export default createStore({
       for (let dato in state.infoCliente) {
         state.infoCliente[dato] = '';
       }
+    },
+    restar_cantidad(state, info_cantidades){
+      
+      for (let elemento of info_cantidades.lista_elementos) {
+        state[info_cantidades.grupo][elemento] -= 1;
+      }
+      
     }
 
   },

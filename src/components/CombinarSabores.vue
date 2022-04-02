@@ -7,7 +7,7 @@
         <label for="vainilla">Vainilla</label>
         <input type="checkbox" value="vainilla" id="vainilla" v-model="sabores_elegidos">
         <label for="limon">Limón</label>
-        <input type="checkbox" value="limón" id="limon" v-model="sabores_elegidos">
+        <input type="checkbox" value="limon" id="limon" v-model="sabores_elegidos">
         <label for="naranja">Naranja</label>
         <input type="checkbox" value="naranja" id="naranja" v-model="sabores_elegidos">  
         

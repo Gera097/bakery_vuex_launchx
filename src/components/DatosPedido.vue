@@ -67,7 +67,22 @@
                     sabores: this.$store.getters.sabores_pastel,
                     adornos: this.$store.getters.adornos_pastel
                 }
-                this.$store.commit('agregar_pedido', datos_pedido); 
+                this.$store.commit('agregar_pedido', datos_pedido);
+
+                const info_cantidad_sabores = {
+                    lista_elementos: this.$store.state.saborElegido.sabores,
+                    grupo: 'cantidadSabores'
+                }
+                const info_cantidad_adornos = {
+                    lista_elementos: this.$store.state.adornoElegido.adornos,
+                    grupo: 'cantidadAdornos'
+                }
+
+                this.$store.commit('restar_cantidad',info_cantidad_sabores);
+                this.$store.commit('restar_cantidad',info_cantidad_adornos);
+
+               /*  this.$store.commit('restar_cantidad',this.$store.state.saborElegido.sabores); */
+
                 alert("Pedido realizado correctamente"); 
                 this.$store.commit('limpiar_formulario')
             }

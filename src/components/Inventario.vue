@@ -5,6 +5,7 @@
 </script>
 
 <template>
+    <div>
     <table>
         <caption>{{caption}}</caption>
         <tr>
@@ -14,10 +15,13 @@
             <th v-for="(value, key) in store.state[objeto]">{{value}}</th>
         </tr>
     </table>
+    </div>
 </template>
 
 <style scoped>
- table {
-     background-color: rgb(0, 255, 34);
- }
+table {
+    border: 2px solid;
+    border-collapse: collapse;
+    
+} 
 </style>
