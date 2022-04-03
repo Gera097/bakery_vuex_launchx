@@ -71,7 +71,7 @@
 
                 const info_cantidad_sabores = {
                     lista_elementos: this.$store.state.saborElegido.sabores,
-                    grupo: 'cantidadSabores'
+                    grupo: 'Sabores'
                 }
                 const info_cantidad_adornos = {
                     lista_elementos: this.$store.state.adornoElegido.adornos,
@@ -81,8 +81,6 @@
                 this.$store.commit('restar_cantidad',info_cantidad_sabores);
                 this.$store.commit('restar_cantidad',info_cantidad_adornos);
 
-               /*  this.$store.commit('restar_cantidad',this.$store.state.saborElegido.sabores); */
-
                 alert("Pedido realizado correctamente"); 
                 this.$store.commit('limpiar_formulario')
             }
@@ -90,5 +88,9 @@
     }
 </script>
 
-<style>
+<style scoped>
+    form {
+        margin: 0px 25%;
+        border-style: dotted;
+    }
 </style>

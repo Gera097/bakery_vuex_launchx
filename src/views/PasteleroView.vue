@@ -1,8 +1,8 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
 
-    <Inventario class="candidad-sabores" objeto='cantidadSabores' caption="Sabores"/>
-    <Inventario objeto='cantidadAdornos' caption="Adornos"/>
+    <Inventario class="tabla" objeto='Sabores' caption="Sabores"/>
+    <Inventario class="tabla" objeto='cantidadAdornos' caption="Adornos"/>
 
     <table>
         <caption>Pedidos</caption>
@@ -39,18 +39,27 @@
     const store = useStore()
 </script>
 
-<style scoped>
+<style >
     table {
-        /* margin-left: auto;
-        margin-right: auto; */
         margin: 2em auto;
         border: 2px solid;
         border-collapse: collapse;  
     }
     th {
-    background-color: #9D5977;
-    color: #F5ECE1;
-    border: 2px solid #9D5977;
+        padding: 0.5em 1em;
+        background-color: #9D5977;
+        color: #F5ECE1;
+        border: 2px solid #9D5977;
+    }
+
+    .tabla {
+        margin: 2em auto;
+    }
+
+    caption {
+        font-size: x-large;
+        font-weight: 600;
+        margin-bottom: 0.5em;
     }
    
 </style>

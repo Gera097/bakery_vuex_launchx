@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    cantidadSabores: {
+    Sabores: {
       fresa: 10,
       chocolate: 10,
       vainilla: 10,
