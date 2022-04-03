@@ -71,11 +71,14 @@
 
                 const info_cantidad_sabores = {
                     lista_elementos: this.$store.state.saborElegido.sabores,
-                    grupo: 'Sabores'
+                    grupo: 'Sabores',
+                    propiedad: 'cantidad'
                 }
+
                 const info_cantidad_adornos = {
                     lista_elementos: this.$store.state.adornoElegido.adornos,
-                    grupo: 'cantidadAdornos'
+                    grupo: 'Adornos',
+                    propiedad: 'cantidad'
                 }
 
                 this.$store.commit('restar_cantidad',info_cantidad_sabores);

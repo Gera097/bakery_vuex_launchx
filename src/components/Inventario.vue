@@ -1,7 +1,7 @@
 <script setup>
     import { useStore } from 'vuex';
     const store = useStore()
-    defineProps(['objeto', 'caption'])
+    defineProps(['objeto', 'caption','propiedad'])
 </script>
 
 <template>
@@ -12,7 +12,7 @@
                 <th v-for="(value, key) in store.state[objeto]">{{key}}</th>
             </tr>
             <tr>
-                <td v-for="(value, key) in store.state[objeto]">{{value}}</td>
+                <td v-for="(value, key) in store.state[objeto]">{{value[propiedad]}}</td>
             </tr>
         </table>
     </div>

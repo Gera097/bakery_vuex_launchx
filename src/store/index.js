@@ -3,19 +3,19 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     Sabores: {
-      fresa: 10,
-      chocolate: 10,
-      vainilla: 10,
-      limon: 10,
-      naranja: 10,
+      fresa: {precio: 55, cantidad: 10},
+      chocolate: {precio: 60, cantidad: 10},
+      vainilla: {precio: 50, cantidad: 10},
+      limon: {precio: 50, cantidad: 10},
+      naranja: {precio: 50, cantidad: 10},
     },
-    cantidadAdornos: {
-      fondant: 10,
-      chocolate: 15,
-      nueces: 20,
-      fresas: 40,
-      frutas: 10,
-      chantilli: 12,
+    Adornos: {
+      fondant: {precio: 15, cantidad: 20},
+      chocolate: {precio: 20, cantidad: 20},
+      nueces: {precio: 20, cantidad: 20},
+      fresas: {precio: 20, cantidad: 20},
+      frutas: {precio: 30, cantidad: 20},
+      chantilli: {precio: 30, cantidad: 20},
       
     },
     saborElegido: {
@@ -73,7 +73,7 @@ export default createStore({
     restar_cantidad(state, info_cantidades){
       
       for (let elemento of info_cantidades.lista_elementos) {
-        state[info_cantidades.grupo][elemento] -= 1;
+        state[info_cantidades.grupo][elemento][info_cantidades.propiedad] -= 1;
       }
       
     }

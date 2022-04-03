@@ -1,8 +1,10 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
 
-    <Inventario class="tabla" objeto='Sabores' caption="Sabores"/>
-    <Inventario class="tabla" objeto='cantidadAdornos' caption="Adornos"/>
+    <Inventario class="tabla" objeto='Sabores' caption="Sabores"
+    propiedad="cantidad"/>
+    <Inventario class="tabla" objeto='Adornos' caption="Adornos"
+    propiedad="cantidad"/>
 
     <table>
         <caption>Pedidos</caption>
