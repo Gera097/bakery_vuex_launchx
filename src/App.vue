@@ -4,6 +4,7 @@
     <router-link to="/pastelero">Inventario</router-link> 
   </nav>
   <router-view/>
+  
 </template>
 
 <style>
@@ -14,6 +15,9 @@
   text-align: center;
   color: #9D5977;
   background-color: #F5ECE1;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0%;
 }
 
 nav {

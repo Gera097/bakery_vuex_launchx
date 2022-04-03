@@ -1,7 +1,7 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
 
-    <Inventario objeto='cantidadSabores' caption="Sabores"/>
+    <Inventario class="candidad-sabores" objeto='cantidadSabores' caption="Sabores"/>
     <Inventario objeto='cantidadAdornos' caption="Adornos"/>
 
     <table>
@@ -40,10 +40,17 @@
 </script>
 
 <style scoped>
-
-caption {
-    font-size:x-large;
-    font-weight: 600;
-}
-
+    table {
+        /* margin-left: auto;
+        margin-right: auto; */
+        margin: 2em auto;
+        border: 2px solid;
+        border-collapse: collapse;  
+    }
+    th {
+    background-color: #9D5977;
+    color: #F5ECE1;
+    border: 2px solid #9D5977;
+    }
+   
 </style>

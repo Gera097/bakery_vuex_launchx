@@ -15,5 +15,9 @@
 </script>
 
 <style scoped>
-
+ td {
+        padding: 1em;
+        border: 2px dashed;
+        border-color: #9D5977;
+    }
 </style>
