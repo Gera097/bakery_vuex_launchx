@@ -93,7 +93,7 @@
 
 <style scoped>
     form {
-        margin: 0px 25%;
+        margin: 0px 10%;
         border-style: dotted;
     }
 </style>

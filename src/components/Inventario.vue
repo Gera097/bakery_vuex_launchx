@@ -1,11 +1,20 @@
 <script setup>
     import { useStore } from 'vuex';
     const store = useStore()
-    defineProps(['objeto', 'caption','propiedad'])
+    defineProps(['objeto', 'caption','propiedad', 'estilo'])
 </script>
 
 <template>
-    <div class="tabla">
+    <div v-if="estilo === 'lista'" class="lista">
+        <h2>{{caption}}</h2>
+        <dl>
+            <div v-for="(value, key) in store.state[objeto]">
+                <dt >{{key}}</dt>
+                <dd>{{value[propiedad]}}</dd>
+            </div> 
+        </dl>
+    </div>
+    <div v-else class="tabla">
         <table>
             <caption>{{caption}}</caption>
             <tr>
