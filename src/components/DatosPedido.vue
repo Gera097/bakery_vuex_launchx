@@ -15,6 +15,7 @@
             <p>Descripción general del pastel</p>
             <p>Sabores elegidos: {{$store.state.saborElegido.sabores}}</p>
             <p>Adornos elegidos: {{$store.state.adornoElegido.adornos}}</p>
+            <p>Precio: ${{$store.getters.calcular_precio}}</p>
             <button id="realizar-pedido">Realizar Pedido</button>
             </form>
         </div>
@@ -65,7 +66,8 @@
                     tel: this.$store.state.infoCliente.tel,
                     email: this.$store.state.infoCliente.email,
                     sabores: this.$store.getters.sabores_pastel,
-                    adornos: this.$store.getters.adornos_pastel
+                    adornos: this.$store.getters.adornos_pastel,
+                    precio: this.$store.getters.calcular_precio
                 }
                 this.$store.commit('agregar_pedido', datos_pedido);
 
@@ -81,6 +83,7 @@
                     propiedad: 'cantidad'
                 }
 
+                
                 this.$store.commit('restar_cantidad',info_cantidad_sabores);
                 this.$store.commit('restar_cantidad',info_cantidad_adornos);
 
@@ -93,7 +96,9 @@
 
 <style scoped>
     form {
-        margin: 0px 10%;
+        max-width: 725px;
+        margin: 2em auto;
+        padding-bottom: 5%;
         border-style: dotted;
     }
 </style>

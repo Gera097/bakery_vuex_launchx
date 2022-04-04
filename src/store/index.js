@@ -30,6 +30,14 @@ export default createStore({
       email: ''
     },
     infoPedido: [
+      {
+        nombre: 'Gerardo Sánchez Alba',
+        tel: '4641881555',
+        email: 'g.sanchezalba@outlook.com',
+        sabores: 'vainilla',
+        adornos: 'fresas',
+        precio: 270
+      }
     ]
   },
   getters: {
@@ -38,6 +46,19 @@ export default createStore({
     },
     adornos_pastel(state){
       return state.adornoElegido.adornos.toString().replaceAll(',', ', ');
+    },
+    calcular_precio(state){
+      let precio = 0;
+      let nSabores = state.saborElegido.sabores.length;
+      for (let elemento of state.saborElegido.sabores){
+        precio += state.Sabores[elemento].precio / nSabores
+      }  
+
+      for (let elemento of state.adornoElegido.adornos){
+        precio += state.Adornos[elemento].precio
+      } 
+
+      return precio;
     }
   },
   mutations: {
@@ -76,8 +97,7 @@ export default createStore({
         state[info_cantidades.grupo][elemento][info_cantidades.propiedad] -= 1;
       }
       
-    }
-
+    } 
   },
   
   actions: {

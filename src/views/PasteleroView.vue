@@ -14,6 +14,8 @@
             <th>Correo electrónico</th>
             <th>Sabores</th>
             <th>Adornos</th>
+            <th>Precio</th>
+            
         </tr>
         <EntradaPedido
         v-for="(entrada, index) in store.state.infoPedido"
@@ -23,6 +25,7 @@
         :email="entrada.email"
         :sabores="entrada.sabores"
         :adornos="entrada.adornos"
+        :precio="entrada.precio"
         @remove="store.commit('eliminar_pedido', index)"
         >   
         </EntradaPedido>

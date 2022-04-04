@@ -5,12 +5,13 @@
         <td>{{email}}</td>
         <td>{{sabores}}</td>
         <td>{{adornos}}</td>
+        <td>{{precio}}</td>
         <td><button @click="$emit('remove')">Eliminar</button></td>
     </tr>
 </template>
 
 <script setup>
-    defineProps(['nombre', 'tel', 'email','sabores','adornos'])
+    defineProps(['nombre', 'tel', 'email','sabores','adornos','precio'])
     defineEmits(['remove'])
 </script>
 

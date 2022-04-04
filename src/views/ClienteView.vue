@@ -1,29 +1,27 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
-    <InfoPasteleria/>
-    <Sabores/>
-    <Adornos/>
+    <Inventario
+        objeto='Sabores'
+        caption='Sabores'
+        propiedad='precio'
+        estilo=""
+        prefijo="$"
+    />
+    <Inventario
+        objeto='Adornos'
+        caption='Adornos'
+        propiedad='precio'
+        prefijo="$"
+    />
     <DatosPedido/>
+    <InfoPasteleria/>
 </template>
 
-<script> 
+<script setup> 
     import InfoPasteleria from "../components/InfoPasteleria.vue"; 
-    import Sabores from "../components/Sabores.vue"
-    import Adornos from "@/components/Adornos.vue"
     import DatosPedido from "@/components/DatosPedido.vue";
+    import Inventario from "@/components/Inventario.vue";
 
-
-    export default {
-        name: 'ClienteView',
-
-        components:{
-            InfoPasteleria,
-            Sabores,
-            Adornos,
-            DatosPedido
-   
-        }
-    }
 </script>
 
 <style scoped>

@@ -19,7 +19,7 @@
   margin: 0px;
   padding: 0%;
   width: 100%;
-  min-width: 735px;
+  min-width: 900px;
 }
 
 nav {
