@@ -2,6 +2,14 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
+    Pasteles: {
+      tres_leches: {precio: 200, cantidad: 10},
+      cupcake: {precio: 30, cantidad: 10},
+      cheesecake: {precio: 180, cantidad: 10},
+      tradicional: {precio: 100, cantidad: 10},
+      nata: {precio: 120, cantidad: 10},
+    },
+
     Sabores: {
       fresa: {precio: 55, cantidad: 10},
       chocolate: {precio: 60, cantidad: 10},
@@ -17,6 +25,11 @@ export default createStore({
       frutas: {precio: 30, cantidad: 20},
       chantilli: {precio: 30, cantidad: 20},
       
+    },
+    ElementoElegido: {
+      Pasteles: [],
+      Sabores: [],
+      Adornos: []
     },
     saborElegido: {
       sabores: ['chocolate']
@@ -62,6 +75,9 @@ export default createStore({
     }
   },
   mutations: {
+    elementoElegido(state, info_elementos){
+      state.ElementoElegido[info_elementos.grupo] = info_elementos.lista
+    },
     sabores_elegidos(state, sabores) {
       state.saborElegido.sabores = sabores;
     },

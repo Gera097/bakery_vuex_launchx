@@ -1,5 +1,8 @@
 <template>
     <img src="../assets/DeliCakesLogo.svg" alt="DeliCakes logo">
+    <Inventario class="tabla" objeto='Pasteles' caption="Pasteles"
+    propiedad="precio"
+    prefijo="$"/>
     <Inventario
         objeto='Sabores'
         caption='Sabores'

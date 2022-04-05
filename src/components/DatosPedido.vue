@@ -10,6 +10,10 @@
             <label>Correo Electrónico :<input type="email" v-model="cambiar_email_cliente" required></label>
             <br>
             <h3>Mi pastel: </h3>
+            <!-- <ElegirIngredienteVue
+            grupo='Pasteles'
+            caption='Elegir Pastel'
+            tipo='checkbox'/> -->
             <CombinarSabores/>
             <CombinarAdornos/>
             <p>Descripción general del pastel</p>
@@ -23,6 +27,7 @@
 
 <script>
 
+    import ElegirIngredienteVue from "./ElegirIngrediente.vue";
     import CombinarSabores from "../components/CombinarSabores.vue";
     import CombinarAdornos from '@/components/CombinarAdornos.vue';
 
@@ -32,7 +37,8 @@
         name: 'DatosPedido',
         components: {
             CombinarSabores,
-            CombinarAdornos
+            CombinarAdornos,
+            ElegirIngredienteVue
         },
         computed: {
             cambiar_nombre_cliente: {
