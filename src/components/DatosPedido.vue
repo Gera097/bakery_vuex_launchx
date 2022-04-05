@@ -10,13 +10,16 @@
             <label>Correo Electrónico :<input type="email" v-model="cambiar_email_cliente" required></label>
             <br>
             <h3>Mi pastel: </h3>
-            <!-- <ElegirIngredienteVue
+
+            <ElegirIngredienteVue
             grupo='Pasteles'
             caption='Elegir Pastel'
-            tipo='checkbox'/> -->
+            tipo='radio'/>
+
             <CombinarSabores/>
             <CombinarAdornos/>
             <p>Descripción general del pastel</p>
+            <p>Pastel elegido: {{$store.state.ElementoElegido.Pasteles}}</p>
             <p>Sabores elegidos: {{$store.state.saborElegido.sabores}}</p>
             <p>Adornos elegidos: {{$store.state.adornoElegido.adornos}}</p>
             <p>Precio: ${{$store.getters.calcular_precio}}</p>
@@ -71,6 +74,7 @@
                     nombre: this.$store.state.infoCliente.nombre,
                     tel: this.$store.state.infoCliente.tel,
                     email: this.$store.state.infoCliente.email,
+                    pastel: this.$store.state.ElementoElegido.Pasteles,
                     sabores: this.$store.getters.sabores_pastel,
                     adornos: this.$store.getters.adornos_pastel,
                     precio: this.$store.getters.calcular_precio

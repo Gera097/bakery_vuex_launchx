@@ -15,6 +15,7 @@
             <th>Nombre</th>
             <th>Teléfono</th>
             <th>Correo electrónico</th>
+            <th>Pastel</th>
             <th>Sabores</th>
             <th>Adornos</th>
             <th>Precio</th>
@@ -29,6 +30,7 @@
         :sabores="entrada.sabores"
         :adornos="entrada.adornos"
         :precio="entrada.precio"
+        :pastel="entrada.pastel"
         @remove="store.commit('eliminar_pedido', index)"
         >   
         </EntradaPedido>

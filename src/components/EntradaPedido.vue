@@ -3,6 +3,7 @@
         <td>{{nombre}}</td>
         <td>{{tel}}</td>
         <td>{{email}}</td>
+        <td>{{pastel}}</td>
         <td>{{sabores}}</td>
         <td>{{adornos}}</td>
         <td>{{precio}}</td>
@@ -11,7 +12,7 @@
 </template>
 
 <script setup>
-    defineProps(['nombre', 'tel', 'email','sabores','adornos','precio'])
+    defineProps(['nombre', 'tel', 'email','sabores','adornos','precio','pastel'])
     defineEmits(['remove'])
 </script>
 

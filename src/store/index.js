@@ -27,7 +27,7 @@ export default createStore({
       
     },
     ElementoElegido: {
-      Pasteles: [],
+      Pasteles: 'tres_leches',
       Sabores: [],
       Adornos: []
     },
@@ -47,6 +47,7 @@ export default createStore({
         nombre: 'Gerardo Sánchez Alba',
         tel: '4641881555',
         email: 'g.sanchezalba@outlook.com',
+        pastel: 'tres_leches',
         sabores: 'vainilla',
         adornos: 'fresas',
         precio: 270
@@ -63,6 +64,8 @@ export default createStore({
     calcular_precio(state){
       let precio = 0;
       let nSabores = state.saborElegido.sabores.length;
+      let pastel_elegido = state.ElementoElegido.Pasteles;
+
       for (let elemento of state.saborElegido.sabores){
         precio += state.Sabores[elemento].precio / nSabores
       }  
@@ -71,13 +74,20 @@ export default createStore({
         precio += state.Adornos[elemento].precio
       } 
 
+      precio += state.Pasteles[pastel_elegido].precio
+
       return precio;
     }
   },
   mutations: {
-    elementoElegido(state, info_elementos){
-      state.ElementoElegido[info_elementos.grupo] = info_elementos.lista
+    pastel_elegido(state, pastel) {
+      state.ElementoElegido.Pasteles = pastel;
     },
+
+    /* elementoElegido(state, info_elementos){
+      state.ElementoElegido[info_elementos.grupo] = info_elementos.lista
+  
+    }, */
     sabores_elegidos(state, sabores) {
       state.saborElegido.sabores = sabores;
     },
