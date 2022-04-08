@@ -8,34 +8,35 @@
     <Inventario class="tabla" objeto='Adornos' caption="Adornos"
     propiedad="cantidad"/>
     
-
-    <table>
-        <caption>Pedidos</caption>
-        <tr>
-            <th>Nombre</th>
-            <th>Teléfono</th>
-            <th>Correo electrónico</th>
-            <th>Pastel</th>
-            <th>Sabores</th>
-            <th>Adornos</th>
-            <th>Precio</th>
+    <div class="table-container">
+        <table>
+            <caption>Pedidos</caption>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Correo electrónico</th>
+                <th>Pastel</th>
+                <th>Sabores</th>
+                <th>Adornos</th>
+                <th>Precio</th>
+                
+            </tr>
+            <EntradaPedido
+            v-for="(entrada, index) in store.state.infoPedido"
+            :key="entrada.id"
+            :nombre="entrada.nombre"
+            :tel="entrada.tel"
+            :email="entrada.email"
+            :sabores="entrada.sabores"
+            :adornos="entrada.adornos"
+            :precio="entrada.precio"
+            :pastel="entrada.pastel"
+            @remove="store.commit('eliminar_pedido', index)"
+            >   
+            </EntradaPedido>
             
-        </tr>
-        <EntradaPedido
-        v-for="(entrada, index) in store.state.infoPedido"
-        :key="entrada.id"
-        :nombre="entrada.nombre"
-        :tel="entrada.tel"
-        :email="entrada.email"
-        :sabores="entrada.sabores"
-        :adornos="entrada.adornos"
-        :precio="entrada.precio"
-        :pastel="entrada.pastel"
-        @remove="store.commit('eliminar_pedido', index)"
-        >   
-        </EntradaPedido>
-        
-    </table>
+        </table>
+    </div>
     
     
     
@@ -50,6 +51,10 @@
 </script>
 
 <style >
+
+    .table-container {
+        overflow-x: auto;
+    }
     table {
         margin: 2em auto;
         border: 2px solid;
