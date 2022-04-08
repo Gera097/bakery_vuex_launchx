@@ -1,5 +1,7 @@
 # bakery_vuex_launchx
 
+## Page
+Link to the page: https://gera097.github.io/bakery_vuex_launchx/
 ## Project setup
 ```
 npm install
