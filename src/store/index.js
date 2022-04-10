@@ -3,11 +3,11 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     Pasteles: {
-      tres_leches: {precio: 200, cantidad: 10},
-      cupcake: {precio: 30, cantidad: 10},
-      cheesecake: {precio: 180, cantidad: 10},
-      tradicional: {precio: 100, cantidad: 10},
-      nata: {precio: 120, cantidad: 10},
+      tres_leches: {precio: 200, cantidad: 15},
+      cupcake: {precio: 30, cantidad: 15},
+      cheesecake: {precio: 180, cantidad: 15},
+      tradicional: {precio: 100, cantidad: 15},
+      nata: {precio: 120, cantidad: 15},
     },
 
     Sabores: {
@@ -27,9 +27,7 @@ export default createStore({
       
     },
     ElementoElegido: {
-      Pasteles: 'tres_leches',
-      Sabores: [],
-      Adornos: []
+      Pasteles: ['tres_leches']
     },
     saborElegido: {
       sabores: ['chocolate']
@@ -55,6 +53,14 @@ export default createStore({
     ]
   },
   getters: {
+    list_pastel(state) {
+      if (typeof(state.ElementoElegido.Pasteles) === "string") {
+        return [state.ElementoElegido.Pasteles]; 
+      }
+      else {
+        return state.ElementoElegido.Pasteles;
+      }
+    },
     sabores_pastel(state){
       return state.saborElegido.sabores.toString().replaceAll(',', ', ');
     },
@@ -64,7 +70,6 @@ export default createStore({
     calcular_precio(state){
       let precio = 0;
       let nSabores = state.saborElegido.sabores.length;
-      let pastel_elegido = state.ElementoElegido.Pasteles;
 
       for (let elemento of state.saborElegido.sabores){
         precio += state.Sabores[elemento].precio / nSabores
@@ -74,14 +79,20 @@ export default createStore({
         precio += state.Adornos[elemento].precio
       } 
 
-      precio += state.Pasteles[pastel_elegido].precio
-
+      if (typeof(state.ElementoElegido.Pasteles) === 'string') {
+        precio += state.Pasteles[state.ElementoElegido.Pasteles].precio;
+      }
+      else {
+        for (let elemento of state.ElementoElegido.Pasteles){
+          precio += state.Pasteles[elemento].precio
+        } 
+      }
       return precio;
     }
   },
   mutations: {
     pastel_elegido(state, pastel) {
-      state.ElementoElegido.Pasteles = pastel;
+        state.ElementoElegido.Pasteles = pastel;
     },
 
     /* elementoElegido(state, info_elementos){

@@ -93,7 +93,13 @@
                     propiedad: 'cantidad'
                 }
 
-                
+                const info_cantidad_pasteles = {
+                    lista_elementos: this.$store.getters.list_pastel,
+                    grupo: 'Pasteles',
+                    propiedad: 'cantidad'
+                }
+
+                this.$store.commit('restar_cantidad',info_cantidad_pasteles);
                 this.$store.commit('restar_cantidad',info_cantidad_sabores);
                 this.$store.commit('restar_cantidad',info_cantidad_adornos);
 
